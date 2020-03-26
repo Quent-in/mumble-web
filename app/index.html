@@ -28,12 +28,12 @@
       <!-- ko with: connectDialog --> 
       <div class="connect-dialog dialog" data-bind="visible: visible() && !joinOnly()">
           <div class="dialog-header">
-            Connect to Server
+            Connexion au serveur
           </div>
           <form data-bind="submit: connect">
             <table>
                 <tr data-bind="if: $root.config.connectDialog.address">
-                  <td>Address</td>
+                  <td>Adresse</td>
                   <td><input id="address" type="text" data-bind="value: address" required></td>
                 </tr>
                 <tr data-bind="if: $root.config.connectDialog.port">
@@ -41,19 +41,19 @@
                   <td><input id="port" type="text" data-bind="value: port" required></td>
                 </tr>
                 <tr data-bind="if: $root.config.connectDialog.token">
-                  <td>Token</td>
+                  <td>Jeton</td>
                   <td><input id="token" type="text" data-bind="value: token"></td>
                 </tr>
                 <tr data-bind="if: $root.config.connectDialog.username">
-                  <td>Username</td>
+                  <td>Nom d’utilisateur</td>
                   <td><input id="username" type="text" data-bind="value: username" required></td>
                 </tr>
                 <tr data-bind="if: $root.config.connectDialog.password">
-                  <td>Password</td>
+                  <td>Mot de passe</td>
                   <td><input id="password" type="password" data-bind="value: password"></td>
                 </tr>
                 <tr data-bind="if: $root.config.connectDialog.channelName">
-                  <td>Channel</td>
+                  <td>Canal</td>
                   <td><input  id="channelName" type="text" data-bind="value: channelName"></td>
                 </tr>
             </table>
@@ -77,50 +77,50 @@
       <!-- ko with: connectErrorDialog -->
        <div class="connect-dialog error-dialog dialog" data-bind="visible: visible()">
           <div class="dialog-header">
-            Failed to connect
+            Échec de la connexion
           </div>
           <form data-bind="submit: connect">
             <table>
                 <tr>
                   <td colspan=2>
                     <!-- ko if: type() == 0 || type() == 8 -->
-                    The connection has been refused.
+                    La connexion a été refusée.
                     <!-- /ko -->
                     <!-- ko if: type() == 1 -->
-                    The server uses an incompatible version.
+                    Le serveur a une version incompatible.
                     <!-- /ko -->
                     <!-- ko if: type() == 2 -->
-                    Your user name was rejected. Maybe try a different one?
+                    Votre nom d’utilisateur a été rejeté. Essayer quelque chose d’autre.
                     <!-- /ko -->
                     <!-- ko if: type() == 3 -->
-                    The given password is incorrect.
-                    The user name you have chosen requires a special one.
+                    Le mot de passe rentré est incorrect.
+                    Le nom d’utilisateur que vous avez choisi nécessite un mot de passe spécial.
                     <!-- /ko -->
                     <!-- ko if: type() == 4 -->
-                    The given password is incorrect.
+                    Le mot de passe rentré est incorrect.
                     <!-- /ko -->
                     <!-- ko if: type() == 5 -->
-                    The user name you have chosen is already in use.
+                    Le nom d’utilisateur que vous avez choisi est déjà utilisé.
                     <!-- /ko -->
                     <!-- ko if: type() == 6 -->
-                    The server is full.
+                    Le serveur est complet.
                     <!-- /ko -->
                     <!-- ko if: type() == 7 -->
-                    The server requires you to provide a client certificate
-                    which is not supported by this web application.
+                    Le serveur nécessite que vous fournissiez un certificat client
+                    qui n’est pas compatible avec cette application web.
                     <!-- /ko -->
                     <br>
-                    The server reports:
+                    Le serveur signale :
                     <br>
                     "<span class="connect-error-reason" data-bind="text: reason"></span>"
                   </td>
                 </tr>
                 <tr data-bind="if: type() == 2 || type() == 3 || type() == 5">
-                  <td>Username</td>
+                  <td>Nom d’utilisateur</td>
                   <td><input id="username" type="text" data-bind="value: username" required></td>
                 </tr>
                 <tr data-bind="if: type() == 3 || type() == 4">
-                  <td>Password</td>
+                  <td>Mot de passe</td>
                   <td><input id="password" type="password" data-bind="value: password" required></td>
                 </tr>
             </table>
@@ -135,7 +135,7 @@
       <!-- ko with: connectionInfo -->
       <div class="connection-info-dialog dialog" data-bind="visible: visible">
         <div class="dialog-header">
-          Connection Information
+          Informations de connexion
         </div>
         <div class="dialog-content">
           <h3>Version</h3>
@@ -163,14 +163,14 @@
           (port <span data-bind="text: remotePort"></span>)
           <br>
 
-          <h3>Audio bandwidth</h3>
+          <h3>Bande passante audio</h3>
           Maximum <span data-bind="text: (maxBitrate()/1000).toFixed(1)"></span> kbits/s
-          (<span data-bind="text: (maxBandwidth()/1000).toFixed(1)"></span> kbits/s with overhead)
+          (<span data-bind="text: (maxBandwidth()/1000).toFixed(1)"></span> kbits/s avec surcharge)
           <br>
-          Current <span data-bind="text: (currentBitrate()/1000).toFixed(1)"></span> kbits/s
-          (<span data-bind="text: (currentBandwidth()/1000).toFixed(1)"></span> kbits/s with overhead)
+          Actuelle <span data-bind="text: (currentBitrate()/1000).toFixed(1)"></span> kbits/s
+          (<span data-bind="text: (currentBandwidth()/1000).toFixed(1)"></span> kbits/s avec surcharge)
           <br>
-          Codec: <span data-bind="text: codec"></span>
+          Codec : <span data-bind="text: codec"></span>
         </div>
         <div class="dialog-footer">
           <input class="dialog-close" type="button" data-bind="click: hide" value="OK">
@@ -180,7 +180,7 @@
       <!-- ko with: settingsDialog -->
       <div class="settings-dialog dialog" data-bind="visible: $data">
           <div class="dialog-header">
-            Settings
+            Paramètres
           </div>
           <form data-bind="submit: $root.applySettings">
             <table>
@@ -188,9 +188,9 @@
                   <td>Transmission</td>
                   <td>
                     <select data-bind='value: voiceMode'>
-                      <option value="cont">Continuous</option>
-                      <option value="vad">Voice Activity</option>
-                      <option value="ptt">Push To Talk</option>
+                      <option value="cont">Continue</option>
+                      <option value="vad">Activité vocale</option>
+                      <option value="ptt">Appuyer pour parler</option>
                   </td>
                 </tr>
                 <tr data-bind="visible: voiceMode() == 'vad'">
@@ -206,13 +206,13 @@
                   </td>
                 </tr>
                 <tr data-bind="visible: voiceMode() == 'ptt'">
-                  <td>PTT Key</td>
+                  <td>Clef PTT</td>
                   <td>
                     <input type="button" data-bind="value: pttKeyDisplay, click: recordPttKey">
                   </td>
                 </tr>
                 <tr>
-                  <td>Audio Quality</td>
+                  <td>Qualité audio</td>
                   <td><span data-bind="text: (audioBitrate()/1000).toFixed(1)"></span> kbit/s</td>
                 </tr>
                 <tr>
@@ -222,7 +222,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Audio per packet</td>
+                  <td>Audio par paquet</td>
                   <td><span data-bind="text: msPerPacket"></span> ms</td>
                 </tr>
                 <tr>
@@ -239,25 +239,25 @@
                     <span data-bind="text: (audioBitrate()/1000).toFixed(1)"></span>,
                     Position
                     <span data-bind="text: (positionBandwidth()/1000).toFixed(1)"></span>,
-                    Overhead
+                    Surcharge
                     <span data-bind="text: (overheadBandwidth()/1000).toFixed(1)"></span>)
                   </td>
                 </tr>
                 <tr>
-                  <td>Show Avatars</td>
+                  <td>Afficher les avatars</td>
                   <td>
                     <select data-bind='value: showAvatars'>
-                      <option value="always">Always</option>
-                      <option value="own_channel">Same Channel</option>
-                      <option value="linked_channel">Linked Channels</option>
-                      <option value="minimal_only">Minimal View</option>
-                      <option value="never">Never</option>
+                      <option value="always">Toujours</option>
+                      <option value="own_channel">Même canal</option>
+                      <option value="linked_channel">Canaux liés</option>
+                      <option value="minimal_only">Vue minimale</option>
+                      <option value="never">Jamais</option>
                   </td>
                 </tr>
                 <tr>
                     <td colspan="2">
                         <input type="checkbox" data-bind="checked: userCountInChannelName">
-                        Show user count after channel name
+                        Afficher le nombre d’utilisateur après le nom du canal
                     </td>
                 </tr>
             </table>
@@ -277,75 +277,75 @@
 
         <!-- ko with: target -->
         <li data-bind="css: { disabled: !canChangeMute() }">
-          Mute
+          Couper le son
         </li>
         <li data-bind="css: { disabled: !canChangeDeafen() }">
-          Deafen
+          Mettre en sourdine
         </li>
         <li data-bind="css: { disabled: !canChangePrioritySpeaker() }">
-          Priority Speaker
+          Priorité de l'orateur
         </li>
 
         <li data-bind="css: { disabled: !canLocalMute() }">
-          Local Mute
+          Couper le son localement
         </li>
         <li data-bind="css: { disabled: !canIgnoreMessages() }">
-          Ignore Messages
+          Ignorer les messages
         </li>
 
         <li data-bind="css: { disabled: !canChangeComment() }, visible: comment">
-          View Comment
+          Voir les commentaires
         </li>
         <!-- ko if: $data === $root.thisUser() -->
         <li data-bind="css: { disabled: !canChangeComment() }, visible: true">
-          Change Comment
+          Modifier le commentaire
         </li>
         <!-- /ko -->
         <!-- ko if: $data !== $root.thisUser() -->
         <li data-bind="css: { disabled: !canChangeComment() }, visible: comment">
-          Reset Comment
+          Effacer le commentaire
         </li>
         <!-- /ko -->
 
         <li data-bind="css: { disabled: !canChangeAvatar() }, visible: texture,
                        click: viewAvatar">
-          View Avatar
+          Voir l’avatar
         </li>
         <!-- ko if: $data === $root.thisUser() -->
         <li data-bind="css: { disabled: !canChangeAvatar() }, visible: true,
                        click: changeAvatar">
-          Change Avatar
+          Modifier l’avatar
         </li>
         <!-- /ko -->
         <li data-bind="css: { disabled: !canChangeAvatar() }, visible: texture,
                        click: removeAvatar">
-          Reset Avatar
+          Effacer l’avatar
         </li>
 
         <li data-bind="css: { disabled: true }, visible: true">
-          Send Message
+          Envoyer le message
         </li>
         <li data-bind="css: { disabled: true }, visible: true">
-          Information
+          Informations
         </li>
 
         <li data-bind="visible: $data === $root.thisUser(),
                        css: { checked: selfMute },
                        click: toggleMute">
-          Self Mute
+          Me couper le son
         </li>
         <li data-bind="visible: $data === $root.thisUser(),
                        css: { checked: selfDeaf },
                        click: toggleDeaf">
-          Self Deafen
+          Me mettre en sourdine
         </li>
 
         <!-- ko if: $data !== $root.thisUser() -->
         <li data-bind="css: { disabled: true }, visible: true">
-          Add Friend
+          Ajouter un ami
         </li>
         <li data-bind="css: { disabled: true }, visible: false">
-          Remove Friend
+          Retirer un ami
         </li>
         <!-- /ko -->
 
@@ -361,36 +361,36 @@
         <li data-bind="visible: users.indexOf($root.thisUser()) === -1,
                        css: { disabled: !canJoin() },
                        click: $root.requestMove.bind($root, $root.thisUser())">
-          Join Channel
+          Rejoindre le canal
         </li>
         <li data-bind="css: { disabled: !canAdd() }">
-          Add
+          Ajouter
         </li>
         <li data-bind="css: { disabled: !canEdit() }">
-          Edit
+          Modifier
         </li>
         <li data-bind="css: { disabled: !canRemove() }">
-          Remove
+          Retirer
         </li>
 
         <li data-bind="css: { disabled: !canLink() }">
-          Link
+          Lien
         </li>
         <li data-bind="css: { disabled: !canUnlink() }">
-          Unlink
+          Rompre le lien
         </li>
         <li data-bind="css: { disabled: !canUnlink() }">
-          Unlink All
+          Rompre tous les liens
         </li>
 
         <li data-bind="css: { disabled: true }">
-          Copy Mumble URL
+          Copier l’URL Mumble
         </li>
         <li data-bind="css: { disabled: true }">
-          Copy Mumble-Web URL
+          Copier l’URL Mumble-Web
         </li>
         <li data-bind="css: { disabled: !canSendMessage() }">
-          Send Message
+          Envoyer le message
         </li>
 
         <!-- /ko -->
@@ -444,17 +444,17 @@
           <span data-bind="text: value"></span>
         </script>
         <script type="text/html" id="log-welcome-message">
-          Welcome message: <span data-bind="html: message"></span>
+          Message de bienvenu : <span data-bind="html: message"></span>
         </script>
         <script type="text/html" id="log-chat-message">
           <span data-bind="visible: channel">
-            (Channel)
+            (Canal)
           </span>
           <span data-bind="template: { name: 'user-tag', data: user }"></span>:
           <span class="message-content" data-bind="html: message"></span>
         </script>
         <script type="text/html" id="log-chat-message-self">
-          To
+          À
           <span data-bind="template: { if: $data.channel, name: 'channel-tag', data: $data.channel }">
           </span><span data-bind="template: { if: $data.user, name: 'user-tag', data: $data.user }">
           </span>:
