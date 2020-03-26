@@ -58,8 +58,8 @@
                 </tr>
             </table>
             <div class="dialog-footer">
-              <input class="dialog-close" type="button" data-bind="click: hide" value="Cancel">
-              <input class="dialog-submit" type="submit" value="Connect">
+              <input class="dialog-close" type="button" data-bind="click: hide" value="Annuler">
+              <input class="dialog-submit" type="submit" value="Connexion">
             </div>
           </form>
         </div>
@@ -70,7 +70,7 @@
             Mumble Voice Conference
           </div>
           <form data-bind="submit: connect">
-            <input class="dialog-submit" type="submit" value="Join Conference">
+            <input class="dialog-submit" type="submit" value="Rejoindre la conférence">
           </form>
         </div>
       <!-- /ko -->
@@ -90,7 +90,7 @@
                     Le serveur a une version incompatible.
                     <!-- /ko -->
                     <!-- ko if: type() == 2 -->
-                    Votre nom d’utilisateur a été rejeté. Essayer quelque chose d’autre.
+                    Votre nom d’utilisateur a été rejeté. Essayez quelque chose d’autre.
                     <!-- /ko -->
                     <!-- ko if: type() == 3 -->
                     Le mot de passe rentré est incorrect.
@@ -125,9 +125,9 @@
                 </tr>
             </table>
             <div class="dialog-footer">
-              <input class="dialog-close" type="button" value="Cancel"
+              <input class="dialog-close" type="button" value="Annuler"
                      data-bind="click: hide, visible: !joinOnly()">
-              <input class="dialog-submit" type="submit" value="Retry">
+              <input class="dialog-submit" type="submit" value="Réessayer">
             </div>
           </form>
         </div>
@@ -262,8 +262,8 @@
                 </tr>
             </table>
             <div class="dialog-footer">
-              <input class="dialog-close" type="button" data-bind="click: $root.closeSettings" value="Cancel">
-              <input class="dialog-submit" type="submit" value="Apply">
+              <input class="dialog-close" type="button" data-bind="click: $root.closeSettings" value="Annuler">
+              <input class="dialog-submit" type="submit" value="Appliquer">
             </div>
           </form>
         </div>
@@ -323,7 +323,7 @@
         </li>
 
         <li data-bind="css: { disabled: true }, visible: true">
-          Envoyer le message
+          Envoyer message
         </li>
         <li data-bind="css: { disabled: true }, visible: true">
           Informations
@@ -342,10 +342,10 @@
 
         <!-- ko if: $data !== $root.thisUser() -->
         <li data-bind="css: { disabled: true }, visible: true">
-          Ajouter un ami
+          Ajouter comme ami
         </li>
         <li data-bind="css: { disabled: true }, visible: false">
-          Retirer un ami
+          Retirer comme ami
         </li>
         <!-- /ko -->
 
@@ -390,7 +390,7 @@
           Copier l’URL Mumble-Web
         </li>
         <li data-bind="css: { disabled: !canSendMessage() }">
-          Envoyer le message
+          Envoyer un message
         </li>
 
         <!-- /ko -->
